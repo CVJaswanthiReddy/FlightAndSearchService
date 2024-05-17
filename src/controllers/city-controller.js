@@ -90,6 +90,12 @@ const update = async(req,res) =>{
 module.exports ={
     create,
     destroy,
+<<<<<<< HEAD
     get,
     update
 }
+=======
+    update,
+    get
+}
+>>>>>>> e75041b47b420137d2a5f54ab22b0d2d7af370ca
