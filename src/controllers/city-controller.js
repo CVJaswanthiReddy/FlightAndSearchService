@@ -69,7 +69,7 @@ const get = async(req,res) =>{
 //patch -> /city/:id ->req.body
 const update = async(req,res) =>{
     try {
-        const response = await cityService.deleteCity(req.params.id),req.body;
+        const response = await cityService.deleteCity(req.params.id,req.body);
         return res.status(200),json({
             data:response,
             success:true,
