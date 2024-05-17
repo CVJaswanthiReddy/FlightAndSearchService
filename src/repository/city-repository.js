@@ -1,4 +1,4 @@
-//const city = require('../models/city');
+const city = require('../models/city');
 const { City }= require('../models/index.js');
 
 class CityRepository{
@@ -16,7 +16,7 @@ class CityRepository{
     }
 
 
-    async deleteCity({ cityId }){
+    async deleteCity(cityId){
         try{
             await City.destroy({
                 where:{

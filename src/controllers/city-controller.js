@@ -25,7 +25,7 @@ const create= async(req,res) => {
 const destroy = async(req,res) =>{
     try {
         const response = await cityService.deleteCity(req.params.id);
-        return res.status(200),json({
+        return res.status(200).json({
             data:response,
             success:true,
             message:" successfully deleted a city",
@@ -48,7 +48,7 @@ const destroy = async(req,res) =>{
 const get = async(req,res) =>{
     try {
         const response = await cityService.getCity(req.params.id);
-        return res.status(200),json({
+        return res.status(200).json({
             data:response,
             success:true,
             message:" successfully fetched a city",
@@ -70,7 +70,7 @@ const get = async(req,res) =>{
 const update = async(req,res) =>{
     try {
         const response = await cityService.updateCity(req.params.id,req.body);
-        return res.status(200),json({
+        return res.status(200).json({
             data:response,
             success:true,
             message:" successfully updated a city",
@@ -90,12 +90,7 @@ const update = async(req,res) =>{
 module.exports ={
     create,
     destroy,
-<<<<<<< HEAD
     get,
     update
 }
-=======
-    update,
-    get
-}
->>>>>>> e75041b47b420137d2a5f54ab22b0d2d7af370ca
+
