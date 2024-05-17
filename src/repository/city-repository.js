@@ -1,11 +1,13 @@
-const city = require('../models/city');
-const {City}= require('../models/index');
+//const city = require('../models/city');
+const { City }= require('../models/index.js');
 
 class CityRepository{
-    async createCity({name})
+    async createCity({ name })
     {
         try{
-            const city= await City.create({name});
+            const city= await City.create({
+                name
+            });
             return city;
         }catch(error){
             console.log("something went wrong in the repository layer");
@@ -46,7 +48,7 @@ class CityRepository{
 
     async getCity({cityId}){
         try {
-            const city= await City.findBypk(cityId);
+            const city= await City.findByPk(cityId);
             return city;
         } catch (error) {
             console.log("something went wrong in the repository layer");
