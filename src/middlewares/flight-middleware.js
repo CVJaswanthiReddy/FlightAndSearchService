@@ -1,3 +1,4 @@
+const{ClientErrorCodes} = require('../utilis/error-code');
 const validateCreateFlight=(req,res,next) => {
     if(
         !req.body.flightNumber || 
@@ -10,7 +11,7 @@ const validateCreateFlight=(req,res,next) => {
     ) {
         //if any of the body params is missing we come inside the if
 
-        return res.status(400).json({
+        return res.status(ClientErrorCodes.BAD_REQUEST).json({
             data:{},
             success:false,
             message:'inavlid request body for creating flight',
